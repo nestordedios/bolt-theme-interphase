@@ -4,7 +4,7 @@
 
 ### Introduction
 
-This is Interphase theme designed by HTML5UP and adapted for Bolt.
+This is Interphase theme designed by TEMPLATED and adapted for Bolt.
 
 ### Configuration
 
