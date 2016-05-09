@@ -1,4 +1,4 @@
-## Solid State by HTML5UP
+## Interphase by TEMPLATED
 
 ![Preview](screenshots/screenshot2.png)
 
