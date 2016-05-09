@@ -20,10 +20,10 @@
     "extra": {
         "bolt-screenshots": [
             "screenshots/screenshot1.png",
-            "screenshots/screenshot2.PNG",
-            "screenshots/screenshot3.PNG",
-            "screenshots/screenshot4.PNG",
-            "screenshots/screenshot5.PNG"
+            "screenshots/screenshot2.png",
+            "screenshots/screenshot3.png",
+            "screenshots/screenshot4.png",
+            "screenshots/screenshot5.png"
         ]
     }
 }
