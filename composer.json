@@ -1,0 +1,29 @@
+{
+    "name": "nestordedios/bolt-theme-interphase",
+    "description": "Interphase - Just a super simple responsive design that'll work for just about anything.",
+    "type": "bolt-theme",
+    "keywords": ["theme", "interphase", "responsive", "awesome", "template", "simple"],
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "CCA (Creative Commons Attribution)",
+    "authors": [
+        {
+            "name": "Nestor de Dios Fernandez",
+            "email": "nestordedios@outlook.es"
+        },
+        {
+            "name": "TEMPLATED",
+            "homepage": "www.templated.co"
+        }
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "screenshots/screenshot1.png",
+            "screenshots/screenshot2.PNG",
+            "screenshots/screenshot3.PNG",
+            "screenshots/screenshot4.PNG",
+            "screenshots/screenshot5.PNG"
+        ]
+    }
+}

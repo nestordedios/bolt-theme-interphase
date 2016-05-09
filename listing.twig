@@ -1,0 +1,32 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+    <div class="container">
+        <header class="all-pages">
+            <h2>Lorem ipsum dolor sit</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem.</p>
+        </header>
+        <div class="row item-container">
+
+        {% setcontent pages = 'pages/latest/6' allowpaging %}
+
+        {% for page in pages %}
+
+            <section class="feature 6u 12u$(small)">
+                {% if page.image is not empty %}
+                    <img class="image fit" src="{{ page.image|thumbnail(467, 220, 'r') }}" alt="" />
+                {% endif %}
+                <h3 class="title">{{ page.title }}</h3>
+                <p>{{ page.teaser|excerpt(200) }}</p>
+            </section>
+
+        {% endfor %}
+
+        </div>
+<div class="pager">{{ pager('', 3, '_pagination.twig' ) }}</div>
+
+    </div>
+
+
+
+{% endblock content %}

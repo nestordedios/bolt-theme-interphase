@@ -1,0 +1,23 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+    <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="container">
+
+                <header class="major">
+                    <h2>{{ record.title }}</h2>
+                    <p>{{ record.teaser }}</p>
+                </header>
+
+                {% if record.image is not empty %}
+
+                <a class="image fit"><img src="{{ record.image|thumbnail(645, 215, 'r') }}" alt="" /></a>
+
+                {% endif %}
+
+                {{ record.body }}
+
+            </div>
+        </section>
+{% endblock content %}

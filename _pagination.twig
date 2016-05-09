@@ -1,0 +1,55 @@
+{% set link = pager.makelink() %}
+
+{% if pager.totalpages > 1 %}
+<style>
+.pager li{
+    display: inline;
+}
+
+.pagination .buttons {
+    min-width: initial;
+}
+.pagination .active .button {
+	border-color: #82b440;
+	background-color: #82b440;
+	color: white;
+}
+
+.pagination li a {
+    margin-bottom: 0.5em;
+}
+</style>
+</br>
+  <ul class="pagination buttons">
+{# 'first' and 'prev' #}
+{% if pager.current > 1 and class!="narrow" %}
+    <li><a class="button" href="{{link}}{{pager.current-1}}">&lsaquo; </a></li>
+{% endif %}
+{% if pager.current > surr+1 %}
+    <li><a class="button" href="{{link}}{{1}}">1</a></li>
+{% endif %}
+
+{# start with '..' if there are more than surr+1 before currentpage.. #}
+{% if pager.current > surr+2 %}
+    <li class="disabled">...</li>
+{% endif %}
+
+{% for i in max(1, pager.current-surr)..min(pager.current+surr, pager.totalpages) %}
+    <li {% if i==pager.current %}class="current active"{%endif%}><a class="button" href="{{link}}{{i}}">{{i}}</a></li>
+{% endfor %}
+
+{# end with '..' if there are more than surr+1 after currentpage.. #}
+{% if pager.current < (pager.totalpages - surr - 1) %}
+    <li class="disabled">...</li>
+{% endif %}
+
+{# 'next' and 'last' #}
+{% if pager.current < pager.totalpages-surr %}
+    <li><a class="button" href="{{link}}{{pager.totalpages}}">{{pager.totalpages}}</a></li>
+{% endif %}
+{% if pager.current < pager.totalpages and class!="narrow" %}
+    <li><a class="button" href="{{link}}{{pager.current+1}}">&rsaquo;</a></li>
+{% endif %}
+  </ul>
+
+{% endif %}

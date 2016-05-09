@@ -1,0 +1,81 @@
+{% extends 'master.twig' %}
+
+{% block bodyClass %}landing{% endblock %}
+
+{% block content %}
+
+    <!-- Banner -->
+
+    {% setcontent page = 'page/1' %}
+
+        <section id="banner">
+            <h2>{{ page.title }}</h2>
+            <p>{{ page.title }}</p>
+            <ul class="actions">
+                <li>
+                    <a href="{{ page.link }}" class="button big">Learn More</a>
+                </li>
+            </ul>
+        </section>
+
+
+
+    <!-- One -->
+        <section id="one" class="wrapper style1 align-center">
+            <div class="container">
+                <header>
+                    <h2>Consectetur adipisicing elit</h2>
+                    <p>Lorem ipsum dolor sit amet adipisicing elit. Delectus consequatur sed tempus.</p>
+                </header>
+                <div class="row 200%">
+                    <section class="4u 12u$(small)">
+                        <i class="icon big rounded fa-clock-o"></i>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
+                    </section>
+                    <section class="4u 12u$(small)">
+                        <i class="icon big rounded fa-comments"></i>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime molestiae.</p>
+                    </section>
+                    <section class="4u$ 12u$(small)">
+                        <i class="icon big rounded fa-user"></i>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    <!-- Two -->
+        <section id="two" class="wrapper style2 align-center">
+            <div class="container">
+                <header>
+                    <h2>Lorem ipsum dolor sit</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem.</p>
+                </header>
+                <div class="row item-container">
+
+                {% setcontent pages = 'pages/latest/4' %}
+
+                    {% for page in pages %}
+
+                    <section class="feature 6u 12u$(small)">
+                        {% if page.image is not empty %}
+                            <img class="image fit" src="{{ page.image|thumbnail(467, 162, 'r') }}" alt="" />
+                        {% endif %}
+                        <h3 class="title">{{ page.title }}</h3>
+                        <p>{{ page.teaser|excerpt(200) }}</p>
+                    </section>
+
+                    {% endfor %}
+
+                </div>
+                <footer>
+                    <ul class="actions">
+                        <li>
+                            <a href="/pages" class="button alt big">Browse All</a>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </section>
+
+{% endblock content %}

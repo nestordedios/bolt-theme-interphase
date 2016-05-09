@@ -1,0 +1,18 @@
+{% for item in menu %}
+
+    <li {% if item.submenu is defined %}class="has-dropdown"{% endif %}>
+        <a href="{{ item.link }}">{{ item.label }}</a>
+
+        {% if item.submenu is defined %}
+
+            <ul class="dropdown">
+                {% for submenu in item.submenu %}
+                    <li><a href="{{ submenu.link }}">{{ submenu.label }}</a></li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
+    </li>
+
+{% endfor %}
